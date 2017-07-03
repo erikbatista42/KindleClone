@@ -18,7 +18,7 @@ class VC: UITableViewController {
         navigationItem.title = "Kindle"
         setupBooks()
         
-        tableView.register(UITableViewCell.self ,forCellReuseIdentifier: "cellId")
+        tableView.register(BookCell.self ,forCellReuseIdentifier: "cellId")
         tableView.tableFooterView = UIView()
         
     }
@@ -27,13 +27,15 @@ class VC: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellId = "Cell"
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellId", for: indexPath)
         
         let book = books?[indexPath.row]
         cell.textLabel?.text = book?.title
         
-        cell.textLabel?.text = "sum text"
+        cell.textLabel?.text = book?.title
+        
+        
+        cell.imageView?.image = book?.image
         
         return cell
     }
@@ -54,12 +56,12 @@ class VC: UITableViewController {
         
         let pages = [page1,page2]
         
-        let book = Book(title: "Steve Jobs", author: "Walter Isaacson", pages: pages)
+        let book = Book(title: "Steve Jobs", author: "Walter Isaacson", image: #imageLiteral(resourceName: "steve_jobs"), pages: pages)
         
         
         
         
-        let book2 =  Book(title: "Bill Gates: A Biography", author: "Michael Becraft", pages: [
+        let book2 =  Book(title: "Einstein: His life and Universe", author: "Walter Isaacson", image: #imageLiteral(resourceName: "einstein"), pages: [
             Page(number: 1, text: "Text for page 1"),
             Page(number: 2, text: "Text for page 2"),
             Page(number: 3, text: "Text for page 3"),
