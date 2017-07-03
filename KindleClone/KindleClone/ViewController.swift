@@ -31,27 +31,27 @@ class Page {
 }
 
 class ViewController: UIViewController {
+    
+    var books: [Book]?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .red
         //Can provide custom code starting here
         
+        setupBooks()
+        
+    }
+    func setupBooks() {
         let page1 = Page(number: 1, text: "Text for the first page")
         let page2 = Page(number: 2, text: "This is text for second page")
         
-
+        
         let pages = [page1,page2]
         
         let book = Book(title: "Steve Jobs", author: "Walter Isaacson", pages: pages)
         
-//        let firstPage = book.pages[0]
-//        
-//        if page2.number < 3 {
-//            print(page2.text)
-//        }
-//        book.pages[0]
-//        book.pages[1]
+        
         
         
         let book2 =  Book(title: "Bill Gates: A Biography", author: "Michael Becraft", pages: [
@@ -60,13 +60,24 @@ class ViewController: UIViewController {
             Page(number: 3, text: "Text for page 3"),
             Page(number: 4, text: "Text for page 4")
             ])
-        for books in [book, book2] {
-            print(books.title)
-            for pages in books.pages {
-                print(pages.text)
-            }
+        
+        self.books = [book, book2]
+        
+        guard let books = self.books else {
+            return
         }
         
+        if let unwrappedBooks = self.books {
+            for books in self.books! {
+                print(books.title)
+                for pages in books.pages {
+                    print(pages.text)
+                }
+            }
+            
+        }
+        
+
     }
 
 }
