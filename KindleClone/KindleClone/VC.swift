@@ -15,12 +15,38 @@ class VC: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .blue
-        //Can provide custom code starting here
-        
+        navigationItem.title = "Kindle"
         setupBooks()
         
+        tableView.register(UITableViewCell.self ,forCellReuseIdentifier: "cellId")
+        tableView.tableFooterView = UIView()
+        
     }
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cellId = "Cell"
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellId", for: indexPath)
+        
+        let book = books?[indexPath.row]
+        cell.textLabel?.text = book?.title
+        
+        cell.textLabel?.text = "sum text"
+        
+        return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if let count = books?.count {
+            return count
+        }
+        return 0
+    }
+    
+    
+    
     func setupBooks() {
         let page1 = Page(number: 1, text: "Text for the first page")
         let page2 = Page(number: 2, text: "This is text for second page")
@@ -41,23 +67,7 @@ class VC: UITableViewController {
             ])
         
         self.books = [book, book2]
-        
-        guard let books = self.books else {
-            return
-        }
-        
-        if let unwrappedBooks = self.books {
-            for books in self.books! {
-                print(books.title)
-                for pages in books.pages {
-                    print(pages.text)
-                }
-            }
-            
-        }
-        
 
     }
-
 }
 
