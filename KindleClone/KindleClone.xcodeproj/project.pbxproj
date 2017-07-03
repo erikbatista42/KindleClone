@@ -8,20 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		E7EF32A51F0A4D7A0012693F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7EF32A41F0A4D7A0012693F /* AppDelegate.swift */; };
-		E7EF32A71F0A4D7A0012693F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7EF32A61F0A4D7A0012693F /* ViewController.swift */; };
-		E7EF32AA1F0A4D7A0012693F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7EF32A81F0A4D7A0012693F /* Main.storyboard */; };
+		E7EF32A71F0A4D7A0012693F /* VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7EF32A61F0A4D7A0012693F /* VC.swift */; };
 		E7EF32AC1F0A4D7A0012693F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7EF32AB1F0A4D7A0012693F /* Assets.xcassets */; };
 		E7EF32AF1F0A4D7A0012693F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7EF32AD1F0A4D7A0012693F /* LaunchScreen.storyboard */; };
+		E7EF32B71F0ADFAB0012693F /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7EF32B61F0ADFAB0012693F /* Models.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		E7EF32A11F0A4D7A0012693F /* KindleClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KindleClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7EF32A41F0A4D7A0012693F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E7EF32A61F0A4D7A0012693F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		E7EF32A91F0A4D7A0012693F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E7EF32A61F0A4D7A0012693F /* VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VC.swift; sourceTree = "<group>"; };
 		E7EF32AB1F0A4D7A0012693F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E7EF32AE1F0A4D7A0012693F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E7EF32B01F0A4D7A0012693F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E7EF32B61F0ADFAB0012693F /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Models.swift; path = ../Models.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,11 +55,11 @@
 			isa = PBXGroup;
 			children = (
 				E7EF32A41F0A4D7A0012693F /* AppDelegate.swift */,
-				E7EF32A61F0A4D7A0012693F /* ViewController.swift */,
-				E7EF32A81F0A4D7A0012693F /* Main.storyboard */,
+				E7EF32A61F0A4D7A0012693F /* VC.swift */,
 				E7EF32AB1F0A4D7A0012693F /* Assets.xcassets */,
 				E7EF32AD1F0A4D7A0012693F /* LaunchScreen.storyboard */,
 				E7EF32B01F0A4D7A0012693F /* Info.plist */,
+				E7EF32B61F0ADFAB0012693F /* Models.swift */,
 			);
 			path = KindleClone;
 			sourceTree = "<group>";
@@ -126,7 +126,6 @@
 			files = (
 				E7EF32AF1F0A4D7A0012693F /* LaunchScreen.storyboard in Resources */,
 				E7EF32AC1F0A4D7A0012693F /* Assets.xcassets in Resources */,
-				E7EF32AA1F0A4D7A0012693F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,7 +136,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E7EF32A71F0A4D7A0012693F /* ViewController.swift in Sources */,
+				E7EF32B71F0ADFAB0012693F /* Models.swift in Sources */,
+				E7EF32A71F0A4D7A0012693F /* VC.swift in Sources */,
 				E7EF32A51F0A4D7A0012693F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -145,14 +145,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		E7EF32A81F0A4D7A0012693F /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E7EF32A91F0A4D7A0012693F /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		E7EF32AD1F0A4D7A0012693F /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
