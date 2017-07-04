@@ -14,6 +14,7 @@
 		E7EF32B71F0ADFAB0012693F /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7EF32B61F0ADFAB0012693F /* Models.swift */; };
 		E7EF32B91F0AEFBB0012693F /* BookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7EF32B81F0AEFBB0012693F /* BookCell.swift */; };
 		E7F6A7441F0B3C9200A766D0 /* BookPagerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F6A7431F0B3C9200A766D0 /* BookPagerController.swift */; };
+		E7F6A7461F0B71B700A766D0 /* PageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F6A7451F0B71B700A766D0 /* PageCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		E7EF32B61F0ADFAB0012693F /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Models.swift; path = ../Models.swift; sourceTree = "<group>"; };
 		E7EF32B81F0AEFBB0012693F /* BookCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BookCell.swift; path = ../BookCell.swift; sourceTree = "<group>"; };
 		E7F6A7431F0B3C9200A766D0 /* BookPagerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookPagerController.swift; sourceTree = "<group>"; };
+		E7F6A7451F0B71B700A766D0 /* PageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PageCell.swift; path = ../PageCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				E7EF32B61F0ADFAB0012693F /* Models.swift */,
 				E7EF32B81F0AEFBB0012693F /* BookCell.swift */,
 				E7F6A7431F0B3C9200A766D0 /* BookPagerController.swift */,
+				E7F6A7451F0B71B700A766D0 /* PageCell.swift */,
 			);
 			path = KindleClone;
 			sourceTree = "<group>";
@@ -144,6 +147,7 @@
 			files = (
 				E7EF32B91F0AEFBB0012693F /* BookCell.swift in Sources */,
 				E7F6A7441F0B3C9200A766D0 /* BookPagerController.swift in Sources */,
+				E7F6A7461F0B71B700A766D0 /* PageCell.swift in Sources */,
 				E7EF32B71F0ADFAB0012693F /* Models.swift in Sources */,
 				E7EF32A71F0A4D7A0012693F /* VC.swift in Sources */,
 				E7EF32A51F0A4D7A0012693F /* AppDelegate.swift in Sources */,
