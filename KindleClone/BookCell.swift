@@ -9,9 +9,17 @@
 import UIKit
 
 class BookCell: UITableViewCell {
-    let coverImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = #imageLiteral(resourceName: "steve_jobs")
+    
+    var book: Book? {
+        didSet {
+            coverImageView.image = book?.image
+            titleLabel.text = book?.title
+            authorLabel.text = book?.author
+        }
+    }
+    
+    private let coverImageView: UIImageView = {
+     let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
         imageView.backgroundColor = .red
         //This disables our old style of laying out our sub views and enables Auto-layout to work
@@ -19,7 +27,7 @@ class BookCell: UITableViewCell {
         return imageView
     }()
     
-    let titleLabel: UILabel = {
+    private let titleLabel: UILabel = {
         let label = UILabel()
         label.text = "This is the text for the title of our book inside of out cell"
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -27,7 +35,7 @@ class BookCell: UITableViewCell {
         return label
     }()
     
-    let authorLabel: UILabel = {
+    private let authorLabel: UILabel = {
         let label = UILabel()
         label.text = "This is some text for the author that we have in this row"
         label.translatesAutoresizingMaskIntoConstraints = false
