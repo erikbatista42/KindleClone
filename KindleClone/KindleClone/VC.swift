@@ -43,18 +43,10 @@ class VC: UITableViewController {
                     self.books = []
                     for bookDictionary in bookDictionaries {
                         
-                       if let title = bookDictionary["title"] as? String,
-                        let author = bookDictionary["author"] as? String {
-                        
-                        let book = Book(title: title, author: author, image: #imageLiteral(resourceName: "steve_jobs"), pages: [])
-                        
-                        print(book.title)
-                        
+                        let book = Book(dictionary: bookDictionary)
                         self.books?.append(book)
-
-                        }
                 }
-                    print("All of our books:", self.books)
+
                     DispatchQueue.main.async {
                         self.tableView.reloadData()
                     }

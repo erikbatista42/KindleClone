@@ -21,7 +21,6 @@ class BookCell: UITableViewCell {
     private let coverImageView: UIImageView = {
      let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
-        imageView.backgroundColor = .red
         //This disables our old style of laying out our sub views and enables Auto-layout to work
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
@@ -31,7 +30,6 @@ class BookCell: UITableViewCell {
         let label = UILabel()
         label.text = "This is the text for the title of our book inside of out cell"
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.backgroundColor = .magenta
         return label
     }()
     
@@ -39,7 +37,6 @@ class BookCell: UITableViewCell {
         let label = UILabel()
         label.text = "This is some text for the author that we have in this row"
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.backgroundColor = .green
         return label
     }()
     
