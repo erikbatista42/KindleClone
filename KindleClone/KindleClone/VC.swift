@@ -16,32 +16,53 @@ class VC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Kindle"
-        setupBooks()
-        fetchBooks()
-        
         tableView.register(BookCell.self ,forCellReuseIdentifier: "cellId")
         tableView.tableFooterView = UIView()
         
+        
+        fetchBooks()
     }
     
     func fetchBooks() {
     print("Fetching books...")
-        if  let url = URL(string: "http://jsonprettyprint.com/json-pretty-printer.php") {
+        if  let url = URL(string: "https://letsbuildthatapp-videos.s3-us-west-2.amazonaws.com/kindle.json") {
             URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
                 
                 if let err = error {
                     print("failed to fetch json books",err)
                     return
                 }
-//                print(response)
-//                print(data)
+//
                 guard let data = data else { return }
-             guard let dataAsString = String(data: data, encoding: .utf8)
-            else { return }
-                print(dataAsString)
+                
+                
+                do {
+                    let json =  try JSONSerialization.jsonObject(with: data, options: .mutableContainers)
+                    
+                    guard let bookDictionaries = json as? [[String:Any]] else { return }
+                    self.books = []
+                    for bookDictionary in bookDictionaries {
+                        
+                       if let title = bookDictionary["title"] as? String,
+                        let author = bookDictionary["author"] as? String {
+                        
+                        let book = Book(title: title, author: author, image: #imageLiteral(resourceName: "steve_jobs"), pages: [])
+                        
+                        print(book.title)
+                        
+                        self.books?.append(book)
+
+                        }
+                }
+                    print("All of our books:", self.books)
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
+                } catch let jsonError {
+                    print("Fail to parse json properly", jsonError)
+                }
+    
             }).resume()
-            
-            print("have we fetched our books yet?")
         }
         
     }
