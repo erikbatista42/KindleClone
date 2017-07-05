@@ -15,12 +15,32 @@ class VC: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupNavigationBarStyles()
+        setupNavBarButtons()
+        
         navigationItem.title = "Kindle"
         tableView.register(BookCell.self ,forCellReuseIdentifier: "cellId")
         tableView.tableFooterView = UIView()
         
         
         fetchBooks()
+    }
+    
+    func setupNavBarButtons() {
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "menu") .withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(handleMenuPress))
+        
+            navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "amazon_icon") .withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(handleMenuPress))
+        
+    }
+    func handleMenuPress() {
+        print("Menu Pressed")
+    }
+    
+    func setupNavigationBarStyles() {
+        navigationController?.navigationBar.barTintColor = UIColor(red: 40/255, green: 40/255, blue: 40/255, alpha: 1)
+        navigationController?.navigationBar.isTranslucent = false
+        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
     }
     
     func fetchBooks() {
